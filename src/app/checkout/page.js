@@ -1,12 +1,12 @@
 // app/checkout/page.js
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { format, parseISO } from 'date-fns';
 
-export default function CheckoutPage() {
+function CheckoutPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const bookingData = searchParams.get('bookingData');
@@ -240,7 +240,7 @@ export default function CheckoutPage() {
                       0x8F32b1b8Aa4BF893F1396256d225C5F6b5b5c341
                     </div>
                     <p className="text-yellow-400 text-sm">
-                      Important: Only send the exact amount. After sending, click "Complete Payment".
+                      Important: Only send the exact amount. After sending, click &quot;Complete Payment&quot;.
                     </p>
                   </div>
                 )}
@@ -260,7 +260,7 @@ export default function CheckoutPage() {
                       <p><span className="text-gray-400">Reference:</span> DST-{Date.now().toString().substring(5)}</p>
                     </div>
                     <p className="text-yellow-400 text-sm">
-                      Important: Include the reference number in your transfer. After sending, click "Complete Payment".
+                      Important: Include the reference number in your transfer. After sending, click &quot;Complete Payment&quot;.
                     </p>
                   </div>
                 )}
@@ -410,5 +410,13 @@ export default function CheckoutPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function CheckoutPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <CheckoutPageContent />
+    </Suspense>
   );
 }

@@ -42,7 +42,7 @@ export default function BookingConfirmationPage() {
 					<div className="text-4xl mb-4">🔍</div>
 					<h1 className="text-2xl font-bold mb-4">No booking found</h1>
 					<p className="text-gray-400 mb-6">
-						We couldn't find your booking information.
+						We could not find your booking information.
 					</p>
 					<Link
 						href="/booking"

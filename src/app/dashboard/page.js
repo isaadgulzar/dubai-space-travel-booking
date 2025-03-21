@@ -23,12 +23,12 @@ export default function DashboardPage() {
 		'Pack lightweight clothing that can be layered for the temperature-controlled environment.',
 		'Bring medication for space sickness - it affects about 45% of first-time travelers.',
 		'Remember to stay hydrated before, during, and after your space journey.',
-		"Space food is specially prepared - don't expect to bring your own snacks!",
+		"Space food is specially prepared - do not expect to bring your own snacks!",
 		'Zero-G training is recommended before your first space trip.',
 		'Digital entertainment is provided, but download some content in case of connection issues.',
 		'Communication delays increase with distance from Earth - plan your calls accordingly.',
 		'Space radiation exposure is minimized but bring high-SPF sunscreen for your visit.',
-		"Your body will temporarily grow taller in zero-G - don't be surprised!",
+		"Your body will temporarily grow taller in zero-G - do not be surprised!",
 		'Sleeping in space takes practice - use the provided restraints to avoid floating.',
 	]
 
@@ -346,8 +346,8 @@ export default function DashboardPage() {
 										</h3>
 										<p className="text-gray-400 mb-6">
 											{activeTab === 'upcoming'
-												? "You don't have any upcoming space trips booked."
-												: "You haven't completed any space trips yet."}
+												? "You do not have any upcoming space trips booked."
+												: "You have not completed any space trips yet."}
 										</p>
 										<Link
 											href="/booking"
@@ -391,7 +391,7 @@ export default function DashboardPage() {
 										Safety Protocol Updates for All Destinations
 									</h3>
 									<p className="text-gray-300 mb-2">
-										We've enhanced our safety protocols across all space
+										We have enhanced our safety protocols across all space
 										destinations to ensure an even safer journey.
 									</p>
 									<div className="flex justify-between items-center">

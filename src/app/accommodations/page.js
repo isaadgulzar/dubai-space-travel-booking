@@ -1,13 +1,13 @@
 // app/accommodations/page.js
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { accommodations } from '../../data/accommodations';
 import { destinations, getDestination } from '../../data/destinations';
 
-export default function AccommodationsPage() {
+function AccommodationsPageContent() {
   const searchParams = useSearchParams();
   const destinationId = searchParams.get('destination');
   
@@ -221,5 +221,13 @@ export default function AccommodationsPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function AccommodationsPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <AccommodationsPageContent />
+    </Suspense>
   );
 }

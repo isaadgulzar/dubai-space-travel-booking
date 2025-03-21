@@ -1,7 +1,7 @@
 // app/booking/page.js
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import ReactDatePicker from 'react-datepicker';
@@ -12,7 +12,7 @@ import { destinations, getDestination } from '../../data/destinations';
 import { accommodations, getAccommodationsByDestination } from '../../data/accommodations';
 import { packages, getPackage } from '../../data/packages';
 
-export default function BookingPage() {
+function BookingPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   
@@ -440,5 +440,13 @@ export default function BookingPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function BookingPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <BookingPageContent />
+    </Suspense>
   );
 }
